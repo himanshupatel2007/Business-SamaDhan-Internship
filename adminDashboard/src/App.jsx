@@ -2,13 +2,15 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Admin from "./pages/Admin";
 import Inventory from "./pages/Inventory";
+import ProductList from "./components/Productlist";
 
 function App() {
   return (
     <Routes>
       <Route path="/admin" element={<Layout />}>
-        <Route index element={<Admin />} /> {/* /admin */}
-        <Route path="inventory" element={<Inventory />} /> {/* /admin/inventory */}
+        <Route index element={<Admin />} />
+        <Route path="inventory" element={<Inventory />} />
+        <Route path="productlists" element={<ProductList />} />
       </Route>
     </Routes>
   );

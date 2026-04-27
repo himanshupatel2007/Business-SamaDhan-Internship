@@ -7,7 +7,7 @@ const Admin = () => {
   return (
       <main className="flex-1 bg-[#30333e] ">
         <Infoblock />
-       <div className="p-4 mt-2 w-full h-[400px]">
+       <div className="p-4 mt-2 w-full h-[500px]">
             <SalesLineChart/>
         </div>
       </main>
