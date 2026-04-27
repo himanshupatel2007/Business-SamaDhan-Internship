@@ -7,9 +7,9 @@ const Sidebar = () => {
 
   const navData = [
     { id: "dashboard", label: "Dashboard" , path:"/admin" },
-    { id: "admins", label: "Manage Admins" },
+    { id: "admins", label: "Manage Admins" ,path:"/admin/manageadmins" },
     { id: "teams", label: "Manage Teams and Departments" },
-    { id: "purchase", label: "Purchase Orders" },
+    { id: "purchase", label: "Purchase Orders" ,path:"/admin/orders" },
     { id: "products", label: "Product List" ,path:"/admin/productlists" },
     { id: "bom", label: "B.O.M." },
     { id: "inventory", label: "Inventory", path: "/admin/inventory" }, // ✅ only working route

@@ -8,14 +8,6 @@ const inventoryData = [
   { name: "Coffee Mug", sku: "Z4000HUG", category: "Coffee", price: "$36.00", qty: 1, revenue: "$86.00" }
 ];
 
-const transactionData = [
-  { date: "Oct 26, 12:45 PM", orderId: "#9876", customer: "Sarah K.", method: "Online", status: "Completed", amount: "$145.00" },
-  { date: "Oct 26, 12:45 PM", orderId: "#9876", customer: "Sarah K.", method: "Online", status: "Completed", amount: "$145.00" },
-  { date: "Oct 26, 12:45 PM", orderId: "#9876", customer: "Sarah K.", method: "Online", status: "Completed", amount: "$145.00" },
-  { date: "Oct 26, 12:45 PM", orderId: "#9876", customer: "Sarah K.", method: "Online", status: "Completed", amount: "$145.00" },
-  { date: "Oct 26, 12:45 PM", orderId: "#9876", customer: "Sarah K.", method: "Online", status: "Completed", amount: "$145.00" }
-];
-
 const Inventory = () => {
   return (
     <div className="flex flex-col xl:flex-row gap-6 w-full mt-4">
@@ -61,41 +53,6 @@ const Inventory = () => {
           </tbody>
         </table>
       </div>
-
-      {/* RECENT TRANSACTIONS TABLE */}
-      <div className="bg-[#3a3c44] p-5 rounded-xl shadow-lg flex-1 overflow-x-auto">
-        <h3 className="text-[#f5f5f5] text-sm font-bold tracking-tight uppercase mb-6">Recent Transactions</h3>
-        
-        <table className="w-full text-left text-[13px] text-[#f5f5f5]">
-          <thead className="text-gray-400 border-b border-gray-700">
-            <tr>
-              <th className="pb-3 font-medium">Date</th>
-              <th className="pb-3 font-medium">Order ID</th>
-              <th className="pb-3 font-medium">Customer</th>
-              <th className="pb-3 font-medium">Method</th>
-              <th className="pb-3 font-medium">Status</th>
-              <th className="pb-3 font-medium text-right">Amount</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-700/50">
-            {transactionData.map((tx, i) => (
-              <tr key={i} className="hover:bg-[#30333e]/50 transition-colors">
-                <td className="py-4 text-gray-400">{tx.date}</td>
-                <td className="py-4">{tx.orderId}</td>
-                <td className="py-4">{tx.customer}</td>
-                <td className="py-4">{tx.method}</td>
-                <td className="py-4">
-                  <span className="text-[#44a83e] font-medium">
-                    {tx.status}
-                  </span>
-                </td>
-                <td className="py-4 text-right font-semibold">{tx.amount}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
     </div>
   );
 };
