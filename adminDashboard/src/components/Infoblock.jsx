@@ -26,11 +26,11 @@ const Infoblock = () => {
   ];
 
   return (
-    <div className="bg-[#30333e] p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="border-b-2 border-white bg-[#30333e] p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {blockData.map((data, index) => (
-        <div
+        <div 
           key={index}
-          className="flex items-center gap-4 bg-[#3a3c44] p-5 rounded-xl shadow-md hover:bg-[#35373f] transition-all"
+          className="border-b-2 border-white flex items-center gap-4 bg-[#3a3c44] p-5 rounded-xl shadow-md hover:bg-[#35373f] transition-all"
         >
           {/* Icon Container */}
           <div className="bg-[#30333e] p-3 rounded-lg flex items-center justify-center">

@@ -1,59 +1,51 @@
-import React from "react";
+import React from 'react'
 
 const Navbar = () => {
-  const navData = [
-    {
-      id: "nav_dashboard",
-      label: "Dashboard",
-      icon: "layout-dashboard",
-      isActive: true,
-    },
-    {
-      id: "nav_sales",
-      label: "Sales",
-      icon: "currency-dollar",
-      isActive: false,
-    },
-    {
-      id: "nav_inventory",
-      label: "Inventory",
-      icon: "package",
-      isActive: false,
-    },
-    { id: "nav_reports", label: "Reports", icon: "file-text", isActive: false },
-    { id: "nav_users", label: "Users", icon: "users", isActive: false },
-    {
-      id: "nav_settings",
-      label: "Settings",
-      icon: "settings-gear",
-      isActive: false,
-    },
-  ];
+       const today = new Date();
+
+  const formattedDate = today.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
   return (
-    <div className="h-screen w-64 bg-[#30333e] text-[#f5f5f5] p-4 flex flex-col border-r-2 border-white">
-      {/* Logo / Title */}
-      <h1 className="text-xl font-semibold mb-6">Admin</h1>
+    <div className="w-full px-6 py-4 bg-gradient-to-r from-[#30333e] via-[#2b3140] to-[#1f2a3a] text-[#f5f5f5] flex items-center justify-between shadow-md">
+      {/* Left Title */}
+      <h1 className="text-lg md:text-xl font-semibold tracking-wide">
+        ADMIN DASHBOARD - RETAIL OPERATIONS OVERVIEW
+      </h1>
 
-      {/* Nav Items */}
-      <div className="flex flex-col gap-2">
-        {navData.map((data) => (
-          <div
-            key={data.id}
-            className={`flex items-center gap-3 px-4 py-2 rounded-xl cursor-pointer transition-all duration-200
-            ${
-              data.isActive ? "bg-[#44a83e] text-white" : "hover:bg-[#3a3c44]"
-            }`}
-          >
-            {/* Replace with real icons later */}
-            <div className="w-5 h-5 bg-white/30 rounded"></div>
+      {/* Right Section */}
+      <div className="flex items-center gap-6">
+        {/* Welcome + Date */}
+        <div className="text-right">
+          <h3 className="text-sm font-medium">
+            Welcome, <span className="font-semibold">Admin</span>
+          </h3>
+          <p className="text-xs text-gray-300">{formattedDate}</p>
+        </div>
 
-            <p className="text-sm">{data.label}</p>
+        {/* Notification Icon */}
+        <div className="relative cursor-pointer">
+          <div className="w-9 h-9 rounded-full bg-[#3a3c44] flex items-center justify-center">
+            🔔
           </div>
-        ))}
+
+          {/* Notification badge */}
+          <span className="absolute -top-1 -right-1 bg-red-500 text-[10px] px-1.5 py-[1px] rounded-full">
+            1
+          </span>
+        </div>
+
+        {/* User Avatar */}
+        <div className="w-9 h-9 rounded-full bg-[#3a3c44] flex items-center justify-center cursor-pointer">
+          👤
+        </div>
       </div>
     </div>
   );
 };
-
-export default Navbar;
+      
+  
+export default Navbar
